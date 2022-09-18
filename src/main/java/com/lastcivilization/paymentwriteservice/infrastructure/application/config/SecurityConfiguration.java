@@ -1,4 +1,4 @@
-package com.lastcivilization.paymentwriteservice.infrastructure.application;
+package com.lastcivilization.paymentwriteservice.infrastructure.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
