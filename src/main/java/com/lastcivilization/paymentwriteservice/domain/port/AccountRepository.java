@@ -8,5 +8,5 @@ public interface AccountRepository {
 
     AccountDto save(AccountDto accountDto);
 
-    Optional<AccountDto> findById(Long account);
+    Optional<AccountDto> findById(Long id);
 }

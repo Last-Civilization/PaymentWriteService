@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/last-civilization_user_db
-    username: last-civilization
-    password: last-civilization
   jpa:
     hibernate:
       ddl-auto: validate
