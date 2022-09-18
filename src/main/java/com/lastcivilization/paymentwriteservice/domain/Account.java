@@ -29,7 +29,7 @@ class Account {
     public static final class Builder {
 
         private Long id;
-        private int money;
+        private int money = 0;
 
         private Builder() {
         }
