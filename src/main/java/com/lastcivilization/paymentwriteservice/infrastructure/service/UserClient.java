@@ -1,4 +1,4 @@
-package com.lastcivilization.paymentwriteservice.infrastructure.application.service;
+package com.lastcivilization.paymentwriteservice.infrastructure.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

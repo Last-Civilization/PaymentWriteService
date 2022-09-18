@@ -1,4 +1,4 @@
-package com.lastcivilization.paymentwriteservice.infrastructure.application.database;
+package com.lastcivilization.paymentwriteservice.infrastructure.database;
 
 import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
 import org.mapstruct.Mapper;

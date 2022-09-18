@@ -1,4 +1,4 @@
-package com.lastcivilization.paymentwriteservice.infrastructure.application.database;
+package com.lastcivilization.paymentwriteservice.infrastructure.database;
 
 import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static com.lastcivilization.paymentwriteservice.infrastructure.application.database.EntityMapper.MAPPER;
+import static com.lastcivilization.paymentwriteservice.infrastructure.database.EntityMapper.MAPPER;
 
 @Service
 @RequiredArgsConstructor

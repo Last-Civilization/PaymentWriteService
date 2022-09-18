@@ -1,4 +1,4 @@
-package com.lastcivilization.paymentwriteservice.infrastructure.application.database;
+package com.lastcivilization.paymentwriteservice.infrastructure.database;
 
 import liquibase.pro.packaged.B;
 import lombok.AllArgsConstructor;
