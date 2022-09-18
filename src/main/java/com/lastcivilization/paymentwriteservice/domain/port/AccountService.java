@@ -2,7 +2,7 @@ package com.lastcivilization.paymentwriteservice.domain.port;
 
 import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
 
-interface AccountService {
+public interface AccountService {
 
     Long createAccount();
     AccountDto charge(String keycloakId, int amount);

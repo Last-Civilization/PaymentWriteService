@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: DB-SCHEMA-TEST
+      author: mrrevo
+      changes:
+        - createTable:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: money
+                  type: INT
+                  constraints:
+                    nullable: false

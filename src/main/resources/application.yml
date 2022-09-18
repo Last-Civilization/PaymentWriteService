@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/last-civilization_user_db
+    username: last-civilization
+    password: last-civilization
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: payment-write-service
+  config:
+    import: optional:configserver:http://localhost:8888/
+  cloud:
+    config:
+      token: last-civilization
+server:
+  port: 0
