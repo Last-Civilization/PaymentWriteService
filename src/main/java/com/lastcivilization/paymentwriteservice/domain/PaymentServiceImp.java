@@ -4,15 +4,15 @@ import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
 import com.lastcivilization.paymentwriteservice.domain.dto.UserDto;
 import com.lastcivilization.paymentwriteservice.domain.exception.AccountNotFoundException;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
-import com.lastcivilization.paymentwriteservice.domain.port.AccountService;
+import com.lastcivilization.paymentwriteservice.domain.port.PaymentService;
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
 
-public class AccountServiceImp implements AccountService {
+public class PaymentServiceImp implements PaymentService {
 
     private final UserService userService;
     private final AccountRepository accountRepository;
 
-    public AccountServiceImp(UserService userService, AccountRepository accountRepository) {
+    public PaymentServiceImp(UserService userService, AccountRepository accountRepository) {
         this.userService = userService;
         this.accountRepository = accountRepository;
     }

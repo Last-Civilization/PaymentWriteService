@@ -8,6 +8,8 @@ import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import static com.lastcivilization.paymentwriteservice.infrastructure.service.UserMapper.MAPPER;
+
 @Service
 @RequiredArgsConstructor
 class UserServiceAdapter implements UserService {
@@ -18,7 +20,7 @@ class UserServiceAdapter implements UserService {
     public UserDto getUser(String keycloakId) {
         try {
             User user = userClient.getUser(keycloakId);
-            return UserMapper.MAPPER.toDto(user);
+            return MAPPER.toDto(user);
         } catch (FeignException exception){
             if(exception.status() == 404){
                 throw new UserNotFoundException(keycloakId);
