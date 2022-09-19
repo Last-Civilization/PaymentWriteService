@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Builder
 @Entity
 @Table(name = "accounts")
-class AccountEntity {
+public class AccountEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

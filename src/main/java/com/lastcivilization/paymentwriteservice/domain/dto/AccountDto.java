@@ -1,5 +1,7 @@
 package com.lastcivilization.paymentwriteservice.domain.dto;
 
+import java.util.Objects;
+
 public class AccountDto {
 
     private Long id;
@@ -51,5 +53,18 @@ public class AccountDto {
         public AccountDto build() {
             return new AccountDto(id, money);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AccountDto that = (AccountDto) o;
+        return money == that.money && Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, money);
     }
 }
