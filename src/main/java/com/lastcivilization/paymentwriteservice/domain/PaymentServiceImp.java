@@ -18,11 +18,10 @@ public class PaymentServiceImp implements PaymentService {
     }
 
     @Override
-    public Long createAccount() {
+    public AccountDto createAccount() {
         Account account = buildAccount();
         AccountDto accountDto = Mapper.toDto(account);
-        AccountDto savedAccountDto = accountRepository.save(accountDto);
-        return savedAccountDto.getId();
+        return accountRepository.save(accountDto);
     }
 
     private Account buildAccount() {

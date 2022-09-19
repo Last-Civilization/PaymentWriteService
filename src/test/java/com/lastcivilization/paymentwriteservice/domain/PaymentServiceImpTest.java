@@ -37,15 +37,24 @@ class PaymentServiceImpTest {
     @Test
     void shouldCreateAccount() {
         //given
+        AccountDto expectedAccountDto = getExpectedAccountDto();
+        expectedAccountDto.setMoney(0);
         Mockito.doAnswer(invocationOnMock -> {
             AccountDto result = (AccountDto) invocationOnMock.getArgument(0);
             result.setId(0L);
             return result;
         }).when(accountRepository).save(any(AccountDto.class));
         //when
-        Long createdId = underTest.createAccount();
+        AccountDto accountDto = underTest.createAccount();
         //then
-        assertThat(createdId).isEqualTo(0L);
+        assertThat(accountDto).isEqualTo(expectedAccountDto);
+    }
+
+    private AccountDto getExpectedAccountDto() {
+        return AccountDto.Builder.anAccountDto()
+                .id(0L)
+                .money(100)
+                .build();
     }
 
     @Test
@@ -62,13 +71,6 @@ class PaymentServiceImpTest {
         AccountDto accountDto = underTest.charge(KEYCLOAK_ID, 100);
         //then
         assertThat(accountDto).isEqualTo(expectedAccountDto);
-    }
-
-    private AccountDto getExpectedAccountDto() {
-        return AccountDto.Builder.anAccountDto()
-                .id(0L)
-                .money(100)
-                .build();
     }
 
     @Test

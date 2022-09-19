@@ -17,7 +17,7 @@ class PaymentController {
     private final PaymentService paymentService;
 
     @PostMapping
-    Long createAccount(){
+    AccountDto createAccount(){
         return paymentService.createAccount();
     }
 
