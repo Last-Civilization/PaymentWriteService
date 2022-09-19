@@ -3,6 +3,7 @@ package com.lastcivilization.paymentwriteservice.domain;
 import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
 import com.lastcivilization.paymentwriteservice.domain.dto.UserDto;
 import com.lastcivilization.paymentwriteservice.domain.exception.AccountNotFoundException;
+import com.lastcivilization.paymentwriteservice.domain.exception.NotEnoughMoneyException;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
 import com.lastcivilization.paymentwriteservice.domain.port.PaymentService;
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
@@ -37,7 +38,11 @@ public class PaymentServiceImp implements PaymentService {
     }
 
     private int getMoneyAfterCharge(int amount, AccountDto accountDto) {
-        return accountDto.getMoney() - amount;
+        int newMoney = accountDto.getMoney() - amount;
+        if(newMoney < 0){
+            throw new NotEnoughMoneyException(newMoney);
+        }
+        return newMoney;
     }
 
     private AccountDto getAccount(long accountId) {

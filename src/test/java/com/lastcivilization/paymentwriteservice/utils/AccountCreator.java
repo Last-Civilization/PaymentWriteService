@@ -11,9 +11,9 @@ public class AccountCreator {
 
     private final AccountRepository accountRepository;
 
-    AccountDto createAccount(long id, int money){
+    public AccountDto setTestAccountMoney(int money){
         AccountDto accountDto = AccountDto.Builder.anAccountDto()
-                .id(id)
+                .id(1L)
                 .money(money)
                 .build();
         return accountRepository.save(accountDto);

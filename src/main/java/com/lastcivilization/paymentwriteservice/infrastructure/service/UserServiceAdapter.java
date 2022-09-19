@@ -6,12 +6,14 @@ import com.lastcivilization.paymentwriteservice.domain.exception.UserNotFoundExc
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import static com.lastcivilization.paymentwriteservice.infrastructure.service.UserMapper.MAPPER;
 
 @Service
 @RequiredArgsConstructor
+@Profile({"dev", "prod"})
 class UserServiceAdapter implements UserService {
 
     private final UserClient userClient;
