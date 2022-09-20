@@ -2,11 +2,13 @@ package com.lastcivilization.paymentwriteservice.domain;
 
 import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
 import com.lastcivilization.paymentwriteservice.domain.dto.UserDto;
+import com.lastcivilization.paymentwriteservice.domain.exception.NotEnoughMoneyException;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.function.Executable;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -71,6 +73,20 @@ class PaymentServiceImpTest {
         AccountDto accountDto = underTest.charge(KEYCLOAK_ID, 100);
         //then
         assertThat(accountDto).isEqualTo(expectedAccountDto);
+    }
+
+    @Test
+    void shouldThrowNotEnoughMoneyWhileCharging() {
+        //given
+        when(userService.getUser(anyString())).thenReturn(new UserDto(0L));
+        when(accountRepository.findById(0L)).thenReturn(Optional.of(AccountDto.Builder.anAccountDto()
+                .id(0L)
+                .money(0)
+                .build()));
+        //when
+        Executable chargeExecutable = () -> underTest.charge(KEYCLOAK_ID, 100);
+        //then
+        assertThrows(NotEnoughMoneyException.class, chargeExecutable);
     }
 
     @Test
