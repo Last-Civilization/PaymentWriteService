@@ -13,7 +13,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-@SpringBootTest(classes = PaymentWriteServiceApplication.class, webEnvironment = RANDOM_PORT, properties = "spring.profiles.active=test")
+@SpringBootTest(classes = PaymentWriteServiceApplication.class, webEnvironment = RANDOM_PORT, properties = "test.url=http://localhost:9561")
 @Testcontainers
 @AutoConfigureMockMvc
 public class IntegrationBaseClass {

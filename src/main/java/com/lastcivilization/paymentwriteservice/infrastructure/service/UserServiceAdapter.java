@@ -13,7 +13,6 @@ import static com.lastcivilization.paymentwriteservice.infrastructure.service.Us
 
 @Service
 @RequiredArgsConstructor
-@Profile({"dev", "prod"})
 class UserServiceAdapter implements UserService {
 
     private final UserClient userClient;

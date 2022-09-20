@@ -14,3 +14,5 @@ spring:
       token: last-civilization
 server:
   port: 0
+test:
+  url:

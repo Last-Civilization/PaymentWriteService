@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.lastcivilization.paymentwriteservice.infrastructure.service")
 @EnableEurekaClient
 public class PaymentWriteServiceApplication {
 
