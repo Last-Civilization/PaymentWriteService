@@ -27,12 +27,14 @@ class WireMockConfiguartion {
                 .willReturn(aResponse()
                         .withStatus(OK.value())
                         .withHeader("Content-Type", APPLICATION_JSON_VALUE)
-                        .withBody("{ \"account\":1}")));
+                        .withBody("{ \"keycloakId\":\"b28f7e5a-2622-4721-9369-5f0c899effc9\",\"login\":\"test\",\"email\":\"kwolny31@gmail.com\"," +
+                                "\"stats\":0,\"equipment\":0,\"account\":1}")));
         wireMockServer.stubFor(get(WireMock.urlEqualTo("/users/3"))
                 .willReturn(aResponse()
                         .withStatus(OK.value())
                         .withHeader("Content-Type", APPLICATION_JSON_VALUE)
-                        .withBody("{ \"account\":3}")));
+                        .withBody("{ \"keycloakId\":\"b28f7e5a-2622-4721-9369-5f0c899effc9\",\"login\":\"test\",\"email\":\"kwolny31@gmail.com\"," +
+                                "\"stats\":0,\"equipment\":0,\"account\":3}")));
         wireMockServer.stubFor(get(WireMock.urlEqualTo("/users/2"))
                 .willReturn(aResponse()
                         .withStatus(NOT_FOUND.value())));
