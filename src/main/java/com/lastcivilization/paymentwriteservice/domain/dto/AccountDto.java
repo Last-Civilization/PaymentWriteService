@@ -67,12 +67,4 @@ public class AccountDto {
     public int hashCode() {
         return Objects.hash(id, money);
     }
-
-    @Override
-    public String toString() {
-        return "AccountDto{" +
-                "id=" + id +
-                ", money=" + money +
-                '}';
-    }
 }
