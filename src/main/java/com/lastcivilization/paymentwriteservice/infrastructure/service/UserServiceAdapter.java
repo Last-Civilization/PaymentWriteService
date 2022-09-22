@@ -22,9 +22,11 @@ class UserServiceAdapter implements UserService {
         try {
             User user = userClient.getUser(keycloakId);
             return MAPPER.toDto(user);
-        } catch (FeignException exception){
-            if(exception.status() == 404){
-                throw new UserNotFoundException(keycloakId);
+        } catch (Exception exception){
+            if(exception instanceof FeignException){
+                if(((FeignException)exception).status() == 404){
+                    throw new UserNotFoundException(keycloakId);
+                }
             }
             throw new ApplicationException(exception.getMessage());
         }
