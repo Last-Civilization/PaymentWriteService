@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EntityScan("com.lastcivilization.paymentwriteservice")
-@EnableJpaRepositories("com.lastcivilization.paymentwriteservice")
-@ComponentScan("com.lastcivilization.paymentwriteservice")
+@EntityScan("com.lastcivilization.paymentwriteservice.infrastructure.database")
+@EnableJpaRepositories("com.lastcivilization.paymentwriteservice.infrastructure.database")
+@ComponentScan("com.lastcivilization.paymentwriteservice.infrastructure")
 class BeanConfiguration {
 
     @Bean
