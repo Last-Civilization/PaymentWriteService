@@ -5,7 +5,7 @@ import com.lastcivilization.paymentwriteservice.utils.IntegrationBaseClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.ResultActions;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,7 +28,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
         //given
         accountCreator.setTestAccountMoney(100);
         //when
-        ResultActions chargeResult = mockMvc.perform(patch("/payments/1/moneys/100/charge"));
+        ResultActions chargeResult = mockMvc.perform(put("/payments/1/moneys/100/charge"));
         //then
         chargeResult.andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1L))
@@ -39,7 +39,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
     void shouldReturnAccountNotFoundStatusWhileChargingAccount() throws Exception {
         //given
         //when
-        ResultActions chargeResult = mockMvc.perform(patch("/payments/3/moneys/100/charge"));
+        ResultActions chargeResult = mockMvc.perform(put("/payments/3/moneys/100/charge"));
         //then
         chargeResult.andExpect(status().isNotFound());
     }
@@ -48,7 +48,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
     void shouldReturnUserNotFoundStatusWhileChargingAccount() throws Exception {
         //given
         //when
-        ResultActions chargeResult = mockMvc.perform(patch("/payments/2/moneys/100/charge"));
+        ResultActions chargeResult = mockMvc.perform(put("/payments/2/moneys/100/charge"));
         //then
         chargeResult.andExpect(status().isNotFound());
     }
@@ -58,7 +58,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
         //given
         accountCreator.setTestAccountMoney(0);
         //when
-        ResultActions chargeResult = mockMvc.perform(patch("/payments/1/moneys/100/charge"));
+        ResultActions chargeResult = mockMvc.perform(put("/payments/1/moneys/100/charge"));
         //then
         chargeResult.andExpect(status().isBadRequest());
     }
@@ -68,7 +68,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
         //given
         accountCreator.setTestAccountMoney(0);
         //when
-        ResultActions giveResult = mockMvc.perform(patch("/payments/1/moneys/100/give"));
+        ResultActions giveResult = mockMvc.perform(put("/payments/1/moneys/100/give"));
         //then
         giveResult.andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1L))
@@ -79,7 +79,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
     void shouldReturnAccountNotFoundStatusWhileGivingToAccount() throws Exception {
         //given
         //when
-        ResultActions giveResult = mockMvc.perform(patch("/payments/3/moneys/100/give"));
+        ResultActions giveResult = mockMvc.perform(put("/payments/3/moneys/100/give"));
         //then
         giveResult.andExpect(status().isNotFound());
     }
@@ -88,7 +88,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
     void shouldReturnUserNotFoundStatusWhileGivingToAccount() throws Exception {
         //given
         //when
-        ResultActions giveResult = mockMvc.perform(patch("/payments/2/moneys/100/give"));
+        ResultActions giveResult = mockMvc.perform(put("/payments/2/moneys/100/give"));
         //then
         giveResult.andExpect(status().isNotFound());
     }
