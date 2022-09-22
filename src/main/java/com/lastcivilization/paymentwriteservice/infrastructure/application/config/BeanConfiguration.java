@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @EntityScan("com.lastcivilization.paymentwriteservice.infrastructure.database")
 @EnableJpaRepositories("com.lastcivilization.paymentwriteservice.infrastructure.database")
-@ComponentScan("com.lastcivilization.paymentwriteservice.infrastructure")
+@ComponentScan("com.lastcivilization.paymentwriteservice")
 class BeanConfiguration {
 
     @Bean
