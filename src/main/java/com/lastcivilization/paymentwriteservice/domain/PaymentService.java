@@ -7,9 +7,6 @@ import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
 import com.lastcivilization.paymentwriteservice.domain.port.dto.UserDto;
 
-import static com.lastcivilization.paymentwriteservice.domain.Mapper.toDomain;
-import static com.lastcivilization.paymentwriteservice.domain.Mapper.toDto;
-
 public class PaymentService {
 
     private final UserService userService;
@@ -33,7 +30,7 @@ public class PaymentService {
     public AccountModel charge(String keycloakId, int amount) {
         Account account = getAccountByKeycloakId(keycloakId);
         account.setMoney(getMoneyAfterCharge(amount, account));
-        AccountModel updatedAccountModel = toDto(account);
+        AccountModel updatedAccountModel = Mapper.toDto(account);
         return accountRepository.save(updatedAccountModel);
     }
 
@@ -53,14 +50,14 @@ public class PaymentService {
     public AccountModel give(String keycloakId, int amount) {
         Account account = getAccountByKeycloakId(keycloakId);
         account.setMoney(getMoneyAfterGive(account, amount));
-        AccountModel updatedAccountModel = toDto(account);
+        AccountModel updatedAccountModel = Mapper.toDto(account);
         return accountRepository.save(updatedAccountModel);
     }
 
     private Account getAccountByKeycloakId(String keycloakId) {
         UserDto userDto = userService.getUser(keycloakId);
         AccountModel accountModel = getAccountById(userDto.account());
-        Account account = toDomain(accountModel);
+        Account account = Mapper.toDomain(accountModel);
         return account;
     }
 
