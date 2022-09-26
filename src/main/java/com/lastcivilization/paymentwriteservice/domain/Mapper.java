@@ -1,13 +1,20 @@
 package com.lastcivilization.paymentwriteservice.domain;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
+import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
 
 class Mapper {
 
-    static AccountDto toDto(Account account){
-        return AccountDto.Builder.anAccountDto()
-                .id(account.getId())
-                .money(account.getMoney())
+    static AccountModel toDto(Account account){
+        return new AccountModel(
+                account.getId(),
+                account.getMoney()
+        );
+    }
+
+    public static Account toDomain(AccountModel accountModel) {
+        return Account.Builder.anAccount()
+                .id(accountModel.id())
+                .money(accountModel.money())
                 .build();
     }
 }

@@ -1,12 +1,11 @@
 package com.lastcivilization.paymentwriteservice.infrastructure.service;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.UserDto;
 import com.lastcivilization.paymentwriteservice.domain.exception.ApplicationException;
 import com.lastcivilization.paymentwriteservice.domain.exception.UserNotFoundException;
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
+import com.lastcivilization.paymentwriteservice.domain.port.dto.UserDto;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import static com.lastcivilization.paymentwriteservice.infrastructure.service.UserMapper.MAPPER;

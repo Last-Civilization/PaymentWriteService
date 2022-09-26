@@ -1,6 +1,5 @@
 package com.lastcivilization.paymentwriteservice.infrastructure.database;
 
-import liquibase.pro.packaged.B;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

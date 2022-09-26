@@ -4,14 +4,9 @@ import com.lastcivilization.paymentwriteservice.domain.exception.AccountNotFound
 import com.lastcivilization.paymentwriteservice.domain.exception.ApplicationException;
 import com.lastcivilization.paymentwriteservice.domain.exception.NotEnoughMoneyException;
 import com.lastcivilization.paymentwriteservice.domain.exception.UserNotFoundException;
-import liquibase.pro.packaged.N;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.time.LocalDateTime;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;

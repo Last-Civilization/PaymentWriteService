@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.domain.port;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.UserDto;
+import com.lastcivilization.paymentwriteservice.domain.port.dto.UserDto;
 
 public interface UserService {
 

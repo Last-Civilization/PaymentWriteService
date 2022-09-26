@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.infrastructure.database;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
+import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -9,6 +9,6 @@ public interface EntityMapper {
 
     EntityMapper MAPPER = Mappers.getMapper(EntityMapper.class);
 
-    AccountDto toDto(AccountEntity accountEntity);
-    AccountEntity toEntity(AccountDto accountDto);
+    AccountModel toDto(AccountEntity accountEntity);
+    AccountEntity toEntity(AccountModel accountModel);
 }

@@ -1,12 +1,12 @@
 package com.lastcivilization.paymentwriteservice.domain.port;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountDto;
+import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
 
 import java.util.Optional;
 
 public interface AccountRepository {
 
-    AccountDto save(AccountDto accountDto);
+    AccountModel save(AccountModel accountModel);
 
-    Optional<AccountDto> findById(Long id);
+    Optional<AccountModel> findById(Long id);
 }
