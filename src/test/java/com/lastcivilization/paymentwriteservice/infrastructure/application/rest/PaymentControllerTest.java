@@ -35,6 +35,15 @@ class PaymentControllerTest extends IntegrationBaseClass {
     }
 
     @Test
+    void shouldReturnValidationExceptionStatusWhileChargingAccount() throws Exception {
+        //given
+        //when
+        ResultActions chargeResult = mockMvc.perform(put("/payments/1/moneys/0/charge"));
+        //then
+        chargeResult.andExpect(status().isBadRequest());
+    }
+
+    @Test
     void shouldReturnAccountNotFoundStatusWhileChargingAccount() throws Exception {
         //given
         //when
@@ -72,6 +81,15 @@ class PaymentControllerTest extends IntegrationBaseClass {
         giveResult.andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1L))
                 .andExpect(jsonPath("$.money").value(100));
+    }
+
+    @Test
+    void shouldReturnValidationExceptionStatusWhileGivingToAccount() throws Exception {
+        //given
+        //when
+        ResultActions chargeResult = mockMvc.perform(put("/payments/1/moneys/0/give"));
+        //then
+        chargeResult.andExpect(status().isBadRequest());
     }
 
     @Test
