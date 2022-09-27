@@ -1,4 +1,4 @@
-package com.lastcivilization.paymentwriteservice.domain.dto;
+package com.lastcivilization.paymentwriteservice.domain.view;
 
 public record AccountModel(
         Long id,

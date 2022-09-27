@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.domain;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 
 class Mapper {
 

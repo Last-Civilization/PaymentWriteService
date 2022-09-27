@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.domain;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 import com.lastcivilization.paymentwriteservice.domain.exception.NotEnoughMoneyException;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
 import com.lastcivilization.paymentwriteservice.domain.port.UserService;
@@ -16,7 +16,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;

@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.infrastructure.database;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

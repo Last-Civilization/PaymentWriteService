@@ -1,7 +1,7 @@
 package com.lastcivilization.paymentwriteservice.infrastructure.application.rest;
 
 import com.lastcivilization.paymentwriteservice.domain.PaymentService;
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 import com.lastcivilization.paymentwriteservice.infrastructure.application.rest.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 
 import static com.lastcivilization.paymentwriteservice.infrastructure.application.rest.RestMapper.MAPPER;
 

@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.utils;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.domain.port;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 
 import java.util.Optional;
 

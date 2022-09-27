@@ -1,6 +1,6 @@
 package com.lastcivilization.paymentwriteservice.domain;
 
-import com.lastcivilization.paymentwriteservice.domain.dto.AccountModel;
+import com.lastcivilization.paymentwriteservice.domain.view.AccountModel;
 import com.lastcivilization.paymentwriteservice.domain.exception.AccountNotFoundException;
 import com.lastcivilization.paymentwriteservice.domain.exception.NotEnoughMoneyException;
 import com.lastcivilization.paymentwriteservice.domain.port.AccountRepository;
