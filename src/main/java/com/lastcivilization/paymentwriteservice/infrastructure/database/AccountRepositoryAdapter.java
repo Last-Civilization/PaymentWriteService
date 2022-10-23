@@ -28,4 +28,9 @@ class AccountRepositoryAdapter implements AccountRepository {
         return accountEntity
                 .map(MAPPER::toDto);
     }
+
+    @Override
+    public void deleteById(long id) {
+        accountJpaRepository.deleteById(id);
+    }
 }

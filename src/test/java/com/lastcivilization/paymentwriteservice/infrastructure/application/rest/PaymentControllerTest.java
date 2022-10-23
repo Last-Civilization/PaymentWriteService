@@ -4,6 +4,7 @@ import com.lastcivilization.paymentwriteservice.utils.IntegrationBaseClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.ResultActions;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -17,7 +18,7 @@ class PaymentControllerTest extends IntegrationBaseClass {
         //when
         ResultActions createResult = mockMvc.perform(post("/payments"));
         //then
-        createResult.andExpect(status().isOk())
+        createResult.andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").exists())
                 .andExpect(jsonPath("$.money").value(0));
     }
@@ -108,5 +109,15 @@ class PaymentControllerTest extends IntegrationBaseClass {
         ResultActions giveResult = mockMvc.perform(put("/payments/2/moneys/100/give"));
         //then
         giveResult.andExpect(status().isNotFound());
+    }
+
+    @Test
+    void shouldDeleteAccount() throws Exception {
+        //given
+        accountCreator.setTestAccountMoney(0);
+        //when
+        ResultActions deleteResult = mockMvc.perform(delete("/payments/1"));
+        //then
+        deleteResult.andExpect(status().isNoContent());
     }
 }

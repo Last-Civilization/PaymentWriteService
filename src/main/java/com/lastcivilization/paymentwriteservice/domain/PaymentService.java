@@ -64,4 +64,8 @@ public class PaymentService {
     private int getMoneyAfterGive(Account account, int amount) {
         return account.getMoney() + amount;
     }
+
+    public void deleteAccount(long id) {
+        accountRepository.deleteById(id);
+    }
 }

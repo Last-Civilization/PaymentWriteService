@@ -9,4 +9,6 @@ public interface AccountRepository {
     AccountModel save(AccountModel accountModel);
 
     Optional<AccountModel> findById(Long id);
+
+    void deleteById(long id);
 }
